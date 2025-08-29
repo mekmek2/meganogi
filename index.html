@@ -199,7 +199,6 @@
 
         const $tabs = document.getElementById('tabs');
         const $viewer = document.getElementById('viewer');
-        const $openNewTab = document.getElementById('openNewTab');
 
         function makeTab(page, i) {
             const btn = document.createElement('button');
@@ -235,9 +234,6 @@
             // iframe 로드
             $viewer.src = page.url;
             $viewer.title = `${page.title} – 콘텐츠 뷰어`;
-
-            // 상단 "새 탭" 버튼 동기화
-            $openNewTab.onclick = () => window.open(page.url, '_blank', 'noopener,noreferrer');
 
             // 주소해시 업데이트로 딥링크 지원
             if (pushState) location.hash = `#${page.key}`;
